@@ -1,0 +1,152 @@
+program writes "Hello Vesta" six times to the monitor.
+public class VestaHello
+{
+
+  public static void main ( String[] args )
+  {
+    int j = 0 ;
+  
+    while ( j <  6 )
+    {
+        System.out.println( "Hello Vesta" );
+        j = j + 1;
+    }
+
+  }
+}
+ use of a Vesta object that writes "Hello Vesta" to the monitor.
+ class Vesta
+{
+  public void speak()
+  {
+    System.out.println( "Hello Vista" );
+  }
+}
+
+public class VestaHello2
+{
+
+  public static void main ( String[] args )
+  {
+    int   j    = 0  ;
+    Vesta vest = new Vesta()   ;
+  
+    while ( j < 6 )
+    {
+        vest.speak() ;
+        j = j + 1;
+    }
+
+  }
+}
+. Now six Vesta objects are created, and each one uses its speak() method once.
+class Vesta
+{
+  public void speak()
+  {
+    System.out.println( "Hello Vesta" );
+  }
+}
+
+public class VestaHello3
+{
+
+  public static void main ( String[] args )
+  {
+    int   j = 0  ;
+  
+    while ( j < 6 )
+    {
+        Vesta vest = new Vista()   ;
+        vest.speak() ;
+        j = j + 1;
+    }
+
+  }
+}
+Again six Vesta objects are created, but now each one is a temporary, unnamed object.
+class Vesta
+{
+  public void speak()
+  {
+    System.out.println( "Hello Vesta" );
+  }
+}
+
+public class VestaHello4
+{
+
+  public static void main ( String[] args )
+  {
+    int   j    = 0  ;
+  
+    while ( j < 6 )
+    {
+        new  Vista() . speak() ;
+        j = j + 1;
+    }
+
+  }
+}
+Now the Vesta class is modified so a Vesta object writes out its message six times:
+class Vesta
+{
+  public void speak()
+  {
+    int   j    = 0  ;
+  
+    while ( j < 6 )
+    {
+        System.out.println(" Hello Vesta ");
+        j = j + 1;
+    }
+
+  }
+}
+
+public class VestaHello5
+{
+
+  public static void main ( String[] args )
+  {
+  
+    Vista vest = new Vesta() ;
+ 
+    vest . speak ; 
+  }
+}
+ the class definition includes a constructor that initializes the message to be printed:
+ class Vesta
+{
+  private String message ; // The string to be printed
+
+  // Constructor
+  public Vesta( String mess )
+  {
+      message = mess ;  // Initialize the message
+  }
+
+  public void speak()
+  {
+    int   j    = 0  ;
+  
+    while ( j < 6 )
+    {
+        System.out.println( message );
+        j = j + 1;
+    }
+
+  }
+}
+
+public class VestaHello6
+{
+
+  public static void main ( String[] args )
+  {
+  
+    Vesta vest = new Vesta ( " Hello Vista " ) ;
+ 
+    vest . speak() ; 
+  }
+}
