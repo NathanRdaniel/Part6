@@ -1,6 +1,6 @@
 
 public class Unlucky{
-    public static boolean Unlucky(long num) {
+    public static void main(String args[]) {
         long digit = num;
         long remander = 0;
         int i = 1;
