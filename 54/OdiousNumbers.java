@@ -1,49 +1,48 @@
-import java.util.Scanner;
-import java.util.Scanner;
+
 public class OdiousNumbers{
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter a nonnegative integer:");
-        long n= scan.nextLong();
-        long d = n;
-        long f = n;
+    public static Boolean odiousNumbers(Long num) {
+        long digit = num;
         int i = 1;
         int count = 0;
+        Boolean isodious;
        while(i > 0) {
 
-        n = OdiousNumbers.divide(n);
+        num = OdiousNumbers.divide(num);
        
-       d = OdiousNumbers.remander(d);
-       if(d == 1){
+       digit = OdiousNumbers.remander(digit);
+       if(digit == 1){
         count ++;
     }
     if (count == 3){
        count = count - 2;
     }
-     d = n;
+     digit = num;
      
 
-       if(n == 0){
+       if(num == 0){
            i = 0;
            if(count == 1 || count == 3){
-               System.out.println(f + " Is Odious");
+                isodious = true;   
+                return isodious;
            }
            else{
-            System.out.println(f + " Is evil");
+            isodious = false;   
+            return isodious;
            }
        }
        }
     }
-    public  static long divide(long n){
+    public  static long divide(long num){
         
-        n = (n / 2);
+        num = (num / 2);
        // System.out.println(n);
     
-    return n;
+    return num;
     }
-    public  static long remander(long d){
-        d = (d % 2);
-        System.out.println(d);
-        return d;
-        }
+    public  static long remander(long digit){
+        digit = (digit % 2);
+        System.out.println(digit);
+        return digit;
+    }
+}
 }

@@ -1,40 +1,41 @@
-import java.util.Scanner;
-public class Unlucky{
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Enter a nonnegative integer:");
-        long n= scan.nextLong();
-        long d = n;
-        long f = n;
-        int i = 1;
-       while(i > 0) {
 
-        n = Unlucky.divide(n);
-        if(n == 13){
-            i = 0;
-            System.out.println(f + " Is unlucky.");
-        }
-       d = Unlucky.remander(d);
-     d = n;
-       if(n == 0){
-        System.out.println(f + " Is lucky.");
-        System.out.println("Enter a nonnegative integer:");
-        n= scan.nextLong();
-        d = n;
-        f = n;
-       }
-       }
-    }
-    public  static long divide(long n){
-        
-        n = (n / 10);
-        System.out.println(n);
+public class Unlucky{
+    public static boolean Unlucky(long num) {
+        long digit = num;
+        long remander = 0;
+        int i = 1;
+        Boolean isUnlucky;
+        while(i > 0) {
+
+            num = Unlucky.divide(num);
+           
+           digit = Unlucky.remander(digit);
+            
+         
     
-    return n;
-    }
-    public  static long remander(long d){
-        d = (d % 10);
-        System.out.println(d);
-        return d;
+           if(digit == 1 && remander == 3 ){
+               i = 0;
+                    isUnlucky = true;  
+                    return isUnlucky;
+               }else(num == 0){
+                i = 0;
+                isUnlucky = false; 
+            }
+           remander = digit;
+           digit = num;
+           }
         }
-}
+        public  static long divide(long num){
+            
+            num = (num / 10);
+           // System.out.println(n);
+        
+        return num;
+        }
+        public  static long remander(long digit){
+            digit = (digit % 10);
+            System.out.println(digit);
+            return digit;
+        }
+    }
+    

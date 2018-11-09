@@ -1,68 +1,112 @@
 import java.util.Scanner;
+
 public class EvilUnlucky{
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter a nonnegative integer:");
-        long n= scan.nextLong();
-        long d = n;
-        long f = n;
-        long c = n;
-        long g = n;
+        long num= scan.nextLong();
+        long numUn;
+        boolean isEvil;
+        boolean isUnlucky;
+        int i = 1;
+        while(i > 0) {
+            isEvil = EvilUnlucky.OdiousNumbers(num);
+            isUnlucky = EvilUnlucky.Unlucky(numUn);
+
+            if(isEvil = true && isUnlucky == true){
+                 System.out.println("Is Evil & Unlucky.");
+                 System.out.println("Enter a nonnegative integer:");
+                 num= scan.nextLong();
+             }else{
+                 System.out.println("Is NOT Evil & Unlucky.");
+                 System.out.println("Enter a nonnegative integer:");
+                 num= scan.nextLong();
+            }
+            if(num < 0){
+                i = 0;
+            }
+        }
+    }
+    public static Boolean odiousNumbers(Long num) {
+        long digit = num;
         int i = 1;
         int count = 0;
+        Boolean isodious;
        while(i > 0) {
 
-        n = EvilUnlucky.divide(n);
+        num = OdiousNumbers.divide2(num);
        
-       d = EvilUnlucky.remander(d);
-       if(d == 1){
+       digit = OdiousNumbers.remander2(digit);
+       if(digit == 1){
         count ++;
     }
     if (count == 3){
        count = count - 2;
     }
-     d = n;
+     digit = num;
      
 
-       if(n == 0){
+       if(num == 0){
            i = 0;
            if(count == 1 || count == 3){
-               System.out.println(f + " Is Odious");
+                isodious = true;   
+                return isodious;
            }
            else{
-            System.out.println(f + " Is evil");
+            isodious = false;   
+            return isodious;
            }
        }
        }
-       i = 1;
-       while(i > 0) {
-
-        c = EvilUnlucky.divide(c);
-        if(c == 13){
-            i = 0;
-            System.out.println(f + " Is unlucky.");
-        }
-       g = EvilUnlucky.remander(g);
-     g = c;
-       if(c == 0){
-        System.out.println(f + " Is lucky.");
-        System.out.println("Enter a nonnegative integer:");
-        c= scan.nextLong();
-        g= c;
-        f = c;
-       }
-       }
     }
-    public  static long divide(long n){
+    public  static long divide2(long num){
         
-        n = (n / 2);
+        num = (num / 2);
        // System.out.println(n);
     
-    return n;
+    return num;
     }
-    public  static long remander(long d){
-        d = (d % 2);
-        System.out.println(d);
-        return d;
+    public  s long remander2(long digit){
+        digit = (digit % 2);
+        System.out.println(digit);
+        return digit;
+    }
+public static boolean Unlucky(long num) {
+    long digit = num;
+    long remander = 0;
+    int i = 1;
+    Boolean isUnlucky;
+    while(i > 0) {
+
+        num = Unlucky.divide(num);
+       
+       digit = Unlucky.remander(digit);
+        
+     
+
+       if(digit == 1 && remander == 3 ){
+           i = 0;
+                isUnlucky = true;  
+                return isUnlucky;
+           }else if(num == 0){
+            i = 0;
+            isUnlucky = false; 
         }
+       remander = digit;
+       digit = num;
+       }
+    }
+    public  static long divide(long num){
+        
+        num = (num / 10);
+       // System.out.println(n);
+    
+    return num;
+    }
+    public  static long remander(long digit){
+        digit = (digit % 10);
+        System.out.println(digit);
+        return digit;
+    }
+
 }
